@@ -1,39 +1,30 @@
-//a palavra OPEN permite q a classe seja herdada
+class Constants private constructor(){
+    companion object BANCO {
+    val TABLE = "Pessoa"
 
-open class Maquina (val marca: String) {
-    open fun minhaMarca(){
-        println("Minha marca é $marca")
-    }
-}
-
-private class Computador(marca: String, val nucleos: Int) : Maquina(marca) {
-
-    override fun minhaMarca() {
-        val id = 10
-        super.minhaMarca()
+        fun teste() {
+            println("Sou um método estático.")
+        }
     }
 
-    fun ligar() {}
-    fun processar () {}
+    object VENDAS {
+        val TABLE_NAME = "Vendas"
 
-    fun overload(i: Int) = println("Overload 1")
-    fun overload(i: Int, s: String) = println("Overload 2")
-    fun overload(i: Int, b: Boolean) = println("Overload 1")
-
-    private fun validate() {
-
+        object COLUNAS {
+            val ID = "id"
+            val TOTAL = "Total"
+        }
     }
 
 }
 
 fun main (){
-    val c: Computador = Computador("xpto", 10)
-    with(c) {
-        ligar()
-        processar()
-        minhaMarca()
-        overload(10, "")
-        overload(10)
-        overload(10, false)
-    }
+    println(Constants.TABLE)
+    Constants.teste()
+
+
+    Constants.BANCO.TABLE
+    Constants.BANCO.teste()
+
+    Constants.VENDAS.COLUNAS.TOTAL
 }
