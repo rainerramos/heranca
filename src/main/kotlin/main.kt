@@ -6,7 +6,7 @@ open class Maquina (val marca: String) {
     }
 }
 
-class Computador(marca: String, val nucleos: Int) : Maquina(marca) {
+private class Computador(marca: String, val nucleos: Int) : Maquina(marca) {
 
     override fun minhaMarca() {
         val id = 10
@@ -19,6 +19,10 @@ class Computador(marca: String, val nucleos: Int) : Maquina(marca) {
     fun overload(i: Int) = println("Overload 1")
     fun overload(i: Int, s: String) = println("Overload 2")
     fun overload(i: Int, b: Boolean) = println("Overload 1")
+
+    private fun validate() {
+
+    }
 
 }
 
