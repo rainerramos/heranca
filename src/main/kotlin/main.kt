@@ -1,14 +1,25 @@
 //a palavra OPEN permite q a classe seja herdada
 
 open class Maquina (val marca: String) {
-    fun minhaMarca(){
+    open fun minhaMarca(){
         println("Minha marca é $marca")
     }
 }
 
 class Computador(marca: String, val nucleos: Int) : Maquina(marca) {
-        fun ligar() {}
-        fun processar () {}
+
+    override fun minhaMarca() {
+        val id = 10
+        super.minhaMarca()
+    }
+
+    fun ligar() {}
+    fun processar () {}
+
+    fun overload(i: Int) = println("Overload 1")
+    fun overload(i: Int, s: String) = println("Overload 2")
+    fun overload(i: Int, b: Boolean) = println("Overload 1")
+
 }
 
 fun main (){
@@ -17,5 +28,8 @@ fun main (){
         ligar()
         processar()
         minhaMarca()
+        overload(10, "")
+        overload(10)
+        overload(10, false)
     }
 }
