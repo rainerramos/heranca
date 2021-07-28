@@ -1,30 +1,14 @@
-class Constants private constructor(){
-    companion object BANCO {
-    val TABLE = "Pessoa"
+class Pessoa {
+   lateinit var nome: String
 
-        fun teste() {
-            println("Sou um método estático.")
-        }
+    fun geradorDeNome(){
+        nome = "haiddag"
     }
-
-    object VENDAS {
-        val TABLE_NAME = "Vendas"
-
-        object COLUNAS {
-            val ID = "id"
-            val TOTAL = "Total"
-        }
-    }
-
 }
 
 fun main (){
-    println(Constants.TABLE)
-    Constants.teste()
 
+    val p = Pessoa()
+    p.geradorDeNome()
 
-    Constants.BANCO.TABLE
-    Constants.BANCO.teste()
-
-    Constants.VENDAS.COLUNAS.TOTAL
 }
